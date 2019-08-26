@@ -1,0 +1,22 @@
+<div class="container container-fluid">
+  <table class="table-width table table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">Favorito</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pokemon of pokemonList | paginate: config">
+          <td scope="row" class="pokemon-name-cell">{{ pokemon.name }}</td>
+          <td scope="row">
+            <i [ngClass]="pokemonListPreferences.indexOf(pokemon.name) !== -1 ? 'fas fa-star' : 'far fa-star'"
+              (click)="favoritePokemon(pokemon.name)"></i>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot class="tfoot">
+        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+      </tfoot>
+    </table>
+</div>
