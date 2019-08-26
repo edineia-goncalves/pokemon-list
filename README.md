@@ -1,6 +1,6 @@
-# pokemon-list angular
+## Pokemon-list Angular
 
-npm-install 
+`npm install`
 
 ## Development server
 
